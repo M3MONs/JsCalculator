@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@400;500&display=swap");
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+
+body {
+  font-family: "Mukta", sans-serif;
+}
+
+.calculator-container {
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#result {
+  width: 360px;
+  padding: 5px 10px;
+  text-align: end;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 2.5rem;
+  border: none;
+  outline: none;
+}
+
+.calculator-btns {
+  width: 360px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: justify;
+  grid-gap: 20px;
+  margin-top: 20px;
+}
+
+.btn {
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 1.8rem;
+  width: 75px;
+  margin-top: 5px;
+  text-align: center;
+  transition: 1s background;
+}
+
+.btn:hover {
+  background: whitesmoke;
+}
+
+#result-btn {
+  grid-column-start: 4;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 255, 255, 0.5) ;
+}
+
+#reset{
+    background: rgba(0, 255, 0, 0.5);
+}
+
+.float, #reset, .del{
+  grid-row: 5;
+}
+
+
+@media screen and (max-width:768px){
+.calculator-btns{
+  width: 300px;
+}
+.btn{
+  width: 60px;
+}
+
+#result{
+  width: 300px;
+}
+}
